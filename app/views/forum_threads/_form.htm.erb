@@ -1,0 +1,13 @@
+<%= form_for @forum_thread do |f| %>
+  <div classs ="form-group">
+    <%= f.text_field :subject, placeholder: "Subject", class: "form.control" %>
+  </div>
+  <%= f.fields_for :forum_post do |p| %>
+    <div class="form-group">
+      <%= p.text_area :body, placeholder: "Agrega un comentario", rows:10 ,class:"form-control"%>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.submit %>
+  </div>
+<% end %>

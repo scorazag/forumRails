@@ -1,0 +1,14 @@
+# == Schema Information
+#
+# Table name: forum_threads
+#
+#  id         :bigint           not null, primary key
+#  subject    :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :integer
+#
+class ForumThread < ApplicationRecord
+  belongs_to :user
+  has_many :forum_posts
+end
